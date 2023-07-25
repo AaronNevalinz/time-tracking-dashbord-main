@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS grids as from CSS tricks</title>
+</head>
+<style>
+    html{
+        box-sizing: border-box;
+    }
+    body{
+        box-sizing: inherit;
+        display: grid;
+        place-content: center;
+        min-height: 100svh;
+    }
+    *,
+    *::before,
+    *::after{
+        box-sizing: inherit;
+        padding: 0;
+        margin: 0;
+    }
+    .grid-container{
+        display:grid;
+        grid-template-columns: 100px 100px 200px 200px 200px;
+        grid-template-rows: 200px 100px;
+        gap:0.8rem;
+    }
+    .item{
+        width: 200px;
+        height:200px;
+        position: relative;
+        border-radius: 10px;
+    }
+    .item-1{
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 200px;
+        height: 400px;
+
+    }
+    .absolute-item{
+        position: absolute;
+        background-color: #1291c4;
+        bottom: 0;
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 10px;
+    }
+    @media (max-width: 375px) {
+        body{
+            min-height: auto;
+        }
+        .grid-container{
+            grid-template-columns: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="grid-container">
+        <div class="item item-1" style="background: black;">
+
+        </div>
+        <div class="item" style="background: red;">
+            <div class="absolute-item">
+                <div>
+                    <p>Work</p>
+                </div>
+    
+                <div>
+                    <h1>32hrs</h1>
+                    <p>Last week - 36hrs</p>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background: blue;">
+
+        </div>
+        <div class="item" style="background: green;">
+
+        </div>
+        <div class="item" style="background: green;">
+
+        </div>
+        <div class="item" style="background: green;">
+
+        </div>
+        <div class="item" style="background: blue;">
+
+        </div>
+
+    </div>
+</body>
+</html>
