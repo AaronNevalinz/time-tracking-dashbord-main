@@ -698,16 +698,6 @@ video {
   border-width: 1px;
 }
 
-.bg-exercise-100 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(145 58% 55% / var(--tw-bg-opacity));
-}
-
-.bg-play-100 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(195 74% 62% / var(--tw-bg-opacity));
-}
-
 .bg-primary-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(246 80% 60% / var(--tw-bg-opacity));
@@ -723,24 +713,29 @@ video {
   background-color: hsl(235 46% 20% / var(--tw-bg-opacity));
 }
 
-.bg-selfcare-100 {
+.bg-Work-100 {
   --tw-bg-opacity: 1;
-  background-color: hsl(43 84% 65% / var(--tw-bg-opacity));
+  background-color: hsl(15 100% 70% / var(--tw-bg-opacity));
 }
 
-.bg-social-100 {
+.bg-Play-100 {
+  --tw-bg-opacity: 1;
+  background-color: hsl(195 74% 62% / var(--tw-bg-opacity));
+}
+
+.bg-Social-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(264 64% 52% / var(--tw-bg-opacity));
 }
 
-.bg-study-100 {
+.bg-Study-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(348 100% 68% / var(--tw-bg-opacity));
 }
 
-.bg-work-100 {
+.bg-Exercise-100 {
   --tw-bg-opacity: 1;
-  background-color: hsl(15 100% 70% / var(--tw-bg-opacity));
+  background-color: hsl(145 58% 55% / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -800,34 +795,14 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:bg-secondary-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 46% 20% / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(226 43% 10% / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 45% 61% / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(236 100% 87% / var(--tw-bg-opacity));
-}
-
 .hover\:bg-primary-100:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(246 80% 60% / var(--tw-bg-opacity));
 }
 
-.hover\:bg-play-100:hover {
+.hover\:bg-secondary-200:hover {
   --tw-bg-opacity: 1;
-  background-color: hsl(195 74% 62% / var(--tw-bg-opacity));
+  background-color: hsl(235 46% 20% / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px) {
