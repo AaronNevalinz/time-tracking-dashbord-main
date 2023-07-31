@@ -9,9 +9,10 @@
 </head>
 <body class="bg-secondary-100">
     <section class="m-4 lg:grid place-content-center lg:min-h-screen">
-        <div class="lg:flex gap-5 md:flex-col lg:flex-row">
+        <div class="lg:flex gap-5 md:flex-col lg:flex-row tabs">
 
-                <div class="bg-secondary-200 rounded-2xl flex-shrink-0 lg:w-[200px]">
+                <!-- left container div -->
+                <div class="bg-secondary-200 rounded-2xl flex-shrink-0 w-full lg:w-[200px]">
                     <div class="bg-primary-100 p-5 flex  gap-4 items-center text-white rounded-2xl lg:flex-col lg:items-start">
                         <div class="h-20 w-20 border rounded-full">
                             <img class="object-cover" src="./images/image-jeremy.png" alt="">
@@ -22,127 +23,392 @@
                         </div>
                     </div>
                     <div>
-                        <ul class="flex mx-5 text-white justify-between text-sm py-4 lg:flex-col lg:gap-5">
-                            <li>Daily</li>
-                            <li>Weekly</li>
-                            <li>Monthly</li>
+                        <ul class="flex mx-5 text-secondary-400  justify-between text-sm py-4 lg:flex-col lg:gap-5" role="tablist" aria-label="time tracking section">
+                            <button class="cursor-pointer link-btn hover:text-white" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="panel-daily"
+                                id="tab-daily" 
+                                tabindex="0"
+                                data-timeframe="daily"
+                                >
+                                Daily
+                            </button>
+                            <button class="cursor-pointer link-btn hover:text-white" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="panel-weekly"
+                                id="tab-weekly"
+                                tabindex="0"
+                                data-timeframe="weekly">
+                                Weekly
+                            </button>
+                            <button class="cursor-pointer link-btn hover:text-white" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="panel-monthly"
+                                id="tab-monthly"
+                                tabindex="0"
+                                data-timeframe="monthly">
+                                Monthly
+                            </button>
                         </ul>
                     </div>
                 </div>
 
-            
-                <div class="md:grid grid-cols-3 gap-5 text-secondary-400" id="reports">
+                <!-- daily starts here -->
+                <div
+                    role="tabpanel"
+                    aria-labelledby="tab-daily"
+                    id="panel-daily"
+                    aria-hidden="false"  data-timeframe="daily">
+                    <div class="md:grid grid-cols-3 gap-5 text-secondary-400">
                     
-                    <!-- <div class="bg-work-100 relative h-[130px] lg:h-[180px] w-[300px] lg:w-[250px] rounded-2xl  my-6 lg:my-0">
-                        <div class="">
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
-                        </div>
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Work</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
+                        <div class="bg-Work-100 relative h-[130px] lg:h-[180px]  lg:w-[200px] rounded-2xl  my-6 lg:my-0">
+                            <div class="">
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
                             </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Work</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">5hrs</h1>
+                                    <p class="text-sm font-light">Yesterday - 7hrs</p>
+                                </div>
+                            </div>
+                        </div>
             
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">32hrs</h1>
-                                <p class="text-sm font-light">Last week - 36hrs</p>
+                        <div class="bg-Play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
+                            </div>
+                            
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Play</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">1hr</h1>
+                                    <p class="text-sm font-light">Yesterday - 2hrs</p>
+                                </div>
                             </div>
                         </div>
-                    </div> -->
+            
+                        <div class="bg-Study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Study</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">0hrs</h1>
+                                    <p class="text-sm font-light">Yesterday - 1hr</p>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="bg-Social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Social</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:my-3 font-light">1hr</h1>
+                                    <p class="text-sm font-light">Yesterday - 3hrs</p>
+                                </div>
+                            </div>
         
-                    <!-- <div class="bg-play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
-                        <div>
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
                         </div>
-                        
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Play</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
-                            </div>
             
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">10hrs</h1>
-                                <p class="text-sm font-light">Last week - 8hrs</p>
+                        <div class="bg-Selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Self-care</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">0hrs</h1>
+                                    <p class="text-sm font-light">Yesterday - 1hr</p>
+                                </div>
                             </div>
                         </div>
+            
+                        <div class="bg-Exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Exercise</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">1hr</h1>
+                                    <p class="text-sm font-light">Yesterday - 1hr</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-        
-                    <div class="bg-study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
-                        <div>
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
-                        </div>
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Study</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
+                </div>
+                <!-- daily ends here -->
+
+                <!-- weekly starts here -->
+                <div 
+                    role="tabpanel"
+                    aria-labelledby="tab-weekly"
+                    id="panel-weekly"
+                    aria-hidden="true" class="hidden" data-timeframe="weekly"
+                    >
+                    <div class="md:grid grid-cols-3 gap-5 text-secondary-400">
+                    
+                        <div class="bg-Work-100 relative h-[130px] lg:h-[180px] lg:w-[200px] rounded-2xl  my-6 lg:my-0">
+                            <div class="">
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
                             </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Work</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">32hrs</h1>
+                                    <p class="text-sm font-light">Last week - 36hrs</p>
+                                </div>
+                            </div>
+                        </div>
             
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">4hrs</h1>
-                                <p class="text-sm font-light">Last week - 7hr</p>
+                        <div class="bg-Play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
+                            </div>
+                            
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Play</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">10hrs</h1>
+                                    <p class="text-sm font-light">Last week - 8hrs</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-        
-        
-                    <div class="bg-social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
-                        <div>
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
-                        </div>
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Social</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
-                            </div>
             
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-3xl lg:my-3 font-light">5hrs</h1>
-                                <p class="text-sm font-light">Last week - 10hrs</p>
+                        <div class="bg-Study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Study</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">4hrs</h1>
+                                    <p class="text-sm font-light">Last week - 7hr</p>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="bg-Social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Social</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:my-3 font-light">5hrs</h1>
+                                    <p class="text-sm font-light">Last week - 10hrs</p>
+                                </div>
+                            </div>
+        
+                        </div>
+            
+                        <div class="bg-Selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Self-care</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">2hrs</h1>
+                                    <p class="text-sm font-light">Last week - 36hrs</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="bg-Exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Exercise</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">32hrs</h1>
+                                    <p class="text-sm font-light">Last week - 36hr</p>
+                                </div>
                             </div>
                         </div>
     
                     </div>
-        
-                    <div class="bg-selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
-                        <div>
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
-                        </div>
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Self-care</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
-                            </div>
-            
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">2hrs</h1>
-                                <p class="text-sm font-light">Last week - 36hrs</p>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="bg-exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
-                        <div>
-                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
-                        </div>
-                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
-                            <div class="flex items-center mx-5 justify-between">
-                                <p class="font-bold text-sm">Exercise</p>
-                                <img src="./images/icon-ellipsis.svg" alt="">
-                            </div>
-            
-                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">32hrs</h1>
-                                <p class="text-sm font-light">Last week - 36hr</p>
-                            </div>
-                        </div>
-                    </div> -->
-
-
                 </div>
+                <!-- weekly ends here -->
+
+                <!-- monthly starts here -->
+                <div 
+                    role="tabpanel"
+                    aria-labelledby="tab-monthly"
+                    id="panel-monthly"
+                    aria-hidden="true" class="hidden" data-timeframe="monthly"
+                    >
+                    <div class="md:grid grid-cols-3 gap-5 text-secondary-400">
+                    
+                        <div class="bg-Work-100 relative h-[130px] lg:h-[180px] rounded-2xl lg:w-[200px]  my-6 lg:my-0">
+                            <div class="">
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Work</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">108hrs</h1>
+                                    <p class="text-sm font-light">Last Month - 128hrs</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="bg-Play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
+                            </div>
+                            
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Play</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">23hrs</h1>
+                                    <p class="text-sm font-light">Last Month - 29hrs</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="bg-Study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Study</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">13hrs</h1>
+                                    <p class="text-sm font-light">Last month - 19hr</p>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="bg-Social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Social</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:my-3 font-light">21hrs</h1>
+                                    <p class="text-sm font-light">Last month - 23hrs</p>
+                                </div>
+                            </div>
+        
+                        </div>
+            
+                        <div class="bg-Selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Self-care</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">7hrs</h1>
+                                    <p class="text-sm font-light">Last month - 11hrs</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="bg-Exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                            <div>
+                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
+                            </div>
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                                <div class="flex items-center mx-5 justify-between">
+                                    <p class="font-bold text-sm">Exercise</p>
+                                    <img src="./images/icon-ellipsis.svg" alt="">
+                                </div>
+                
+                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">11hrs</h1>
+                                    <p class="text-sm font-light">Last month - 18hr</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <!-- monthly ends here -->
             
         </div>
     </section>
     <script src="./index.js"></script>
+    <!-- <script src="./tabs.js"></script> -->
 </body>
 </html>

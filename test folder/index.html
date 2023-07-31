@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab Example</title>
+  <style>
+    /* Add your CSS styles for tabs and panels here */
+    .tab {
+      cursor: pointer;
+      padding: 8px 16px;
+      background-color: #f1f1f1;
+    }
+    .active {
+      background-color: #ccc;
+    }
+    .panel {
+      display: none;
+      padding: 16px;
+      border: 1px solid #ccc;
+    }
+    .panel.active {
+      display: block;
+    }
+    .flex{
+        display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add your tab links and panels here -->
+  <div class="flex">
+    <div class="tab" data-timeframe="daily">Daily</div>
+    <div class="tab" data-timeframe="weekly">Weekly</div>
+    <div class="tab" data-timeframe="monthly">Monthly</div>
+  </div>
+  
+  <div class="panel" data-timeframe="daily">
+    <!-- Add content for the daily panel here -->
+    Daily Records go here
+  </div>
+  <div class="panel" data-timeframe="weekly">
+    <!-- Add content for the weekly panel here -->
+    Weekly Records
+  </div>
+  <div class="panel" data-timeframe="monthly">
+    <!-- Add content for the monthly panel here -->
+    Monthly Records
+  </div>
+
+  <script>
+    // Your JavaScript code will go here
+    // Select all tab elements and panel elements
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+
+// Function to display the corresponding panel for the clicked tab
+function showPanel(event) {
+  // Get the timeframe value from the clicked tab's data-timeframe attribute
+  const timeframe = event.target.getAttribute('data-timeframe');
+
+  // Hide all panels first
+  panels.forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  // Show the panel corresponding to the clicked tab
+  panels.forEach(panel => {
+    if (panel.getAttribute('data-timeframe') === timeframe) {
+      panel.classList.add('active');
+    }
+  });
+
+  // Remove 'active' class from all tabs and add it to the clicked tab
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  event.target.classList.add('active');
+}
+
+// Attach click event listeners to all tabs
+tabs.forEach(tab => {
+  tab.addEventListener('click', showPanel);
+});
+
+  </script>
+</body>
+</html>
