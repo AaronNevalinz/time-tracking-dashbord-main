@@ -22,8 +22,18 @@ Users should be able to:
 - Switch between viewing Daily, Weekly, and Monthly stats
 
 ### Screenshot
+<p>Desktop Screenshot</p>
 
-![](./screenshot.jpg)
+![Alt text](<screenshots/FEM TTD -dd.png>)
+
+<p>Tablet design screenshot</p>
+
+![Alt text](<screenshots/FEM TTD -t.png>)
+
+<p>Mobile screenshot</p>
+
+![Alt text](<screenshots/FEM TTD -m.png>)
+
 
 
 ### Links
