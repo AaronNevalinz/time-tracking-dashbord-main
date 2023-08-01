@@ -1,28 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../docs/styles.css">
+  <title>Tab Example</title>
+  <style>
+    /* Add your CSS styles for tabs and panels here */
+    .tab {
+      cursor: pointer;
+      padding: 8px 16px;
+      background-color: #f1f1f1;
+    }
+    .active {
+      background-color: #ccc;
+    }
+    .panel {
+      display: none;
+      padding: 16px;
+      border: 1px solid #ccc;
+    }
+    .panel.active {
+      display: block;
+    }
+  </style>
 </head>
-<body style="height: 100vh; display: grid; place-content: center; position: relative;">
-    <div>
-        <div class="bg-work-100 w-[300px] h-[100px] relative">
-            <div class="">
-                <img class="w-10 absolute top-0 right-0" src="../docs/images/icon-work.svg" alt="">
-            </div>
-            <div class="bg-secondary-200 absolute bottom-0 w-full">
-                <div>
-                    <p>Work</p>
-                </div>
+<body>
+  <!-- Add your tab links and panels here -->
+  <div class="tab active" data-timeframe="daily">Daily</div>
+  <div class="tab" data-timeframe="weekly">Weekly</div>
+  <div class="tab" data-timeframe="monthly">Monthly</div>
+  
+  <div class="panel active" data-timeframe="daily">
+    <!-- The content for the daily panel will be fetched from the API -->
+  </div>
+  <div class="panel" data-timeframe="weekly">
+    <!-- The content for the weekly panel will be fetched from the API -->
+  </div>
+  <div class="panel" data-timeframe="monthly">
+    <!-- The content for the monthly panel will be fetched from the API -->
+  </div>
 
-                <div>
-                    <h1>32hrs</h1>
-                    <p>Last week - 36hrs</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <script>
+    // Your JavaScript code will go here
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
+
+    // Function to fetch and display records for a specific timeframe
+async function fetchAndDisplayRecords(timeframe, panel) {
+  try {
+    // Make API call to fetch records based on the timeframe
+    const response = await fetch('../docs/data.json');
+    const data = await response.json();
+
+    // Clear the previous content and display the fetched records
+    panel.innerHTML = ''; // Clear previous content
+    data.forEach(record => {
+      const recordElement = document.createElement('div');
+      recordElement.textContent = record; // Replace 'record' with the property name containing the record data
+      panel.appendChild(recordElement);
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+// Function to handle tab click event
+function showPanel(event) {
+  const timeframe = event.target.getAttribute('data-timeframe');
+  const panel = document.querySelector(`.panel[data-timeframe="${timeframe}"]`);
+
+  // Hide all panels first
+  document.querySelectorAll('.panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  // Show the panel corresponding to the clicked tab
+  panel.classList.add('active');
+
+  // Fetch and display records for the selected timeframe
+  fetchAndDisplayRecords(timeframe, panel);
+}
+
+// Attach click event listeners to all tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', showPanel);
+});
+
+// Fetch and display records for the default tab on page load
+const defaultTab = document.querySelector('.tab.active');
+const defaultTimeframe = defaultTab.getAttribute('data-timeframe');
+const defaultPanel = document.querySelector(`.panel[data-timeframe="${defaultTimeframe}"]`);
+fetchAndDisplayRecords(defaultTimeframe, defaultPanel);
+
+  </script>
 </body>
 </html>

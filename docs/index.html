@@ -7,9 +7,9 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body class="bg-secondary-100">
+<body class="bg-secondary-100 font-projectFont">
     <section class="m-4 lg:grid place-content-center lg:min-h-screen">
-        <div class="lg:flex gap-5 md:flex-col lg:flex-row tabs">
+        <div class="lg:flex gap-5 md:flex-col lg:flex-row items-center tabs">
 
                 <!-- left container div -->
                 <div class="bg-secondary-200 rounded-2xl flex-shrink-0 w-full lg:w-[200px]">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div>
-                        <ul class="flex mx-5 text-secondary-400  justify-between text-sm py-4 lg:flex-col lg:gap-5" role="tablist" aria-label="time tracking section">
+                        <ul class="flex mx-5 text-secondary-400  justify-between text-sm py-4 lg:flex-col items-start lg:gap-5" role="tablist" aria-label="time tracking section">
                             <button class="cursor-pointer link-btn hover:text-white" 
                                 role="tab" 
                                 aria-selected="true" 
@@ -56,120 +56,127 @@
                     </div>
                 </div>
 
-                <!-- daily starts here -->
-                <div
-                    role="tabpanel"
-                    aria-labelledby="tab-daily"
-                    id="panel-daily"
-                    aria-hidden="false"  data-timeframe="daily">
-                    <div class="md:grid grid-cols-3 gap-5 text-secondary-400">
-                    
-                        <div class="bg-Work-100 relative h-[130px] lg:h-[180px]  lg:w-[200px] rounded-2xl  my-6 lg:my-0">
-                            <div class="">
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
-                            </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Work</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">5hrs</h1>
-                                    <p class="text-sm font-light">Yesterday - 7hrs</p>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="bg-Play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
-                            <div>
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
-                            </div>
-                            
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Play</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">1hr</h1>
-                                    <p class="text-sm font-light">Yesterday - 2hrs</p>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="bg-Study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
-                            <div>
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
-                            </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Study</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-4xl lg:my-4 font-light">0hrs</h1>
-                                    <p class="text-sm font-light">Yesterday - 1hr</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                        <div class="bg-Social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
-                            <div>
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
-                            </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Social</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-3xl lg:my-3 font-light">1hr</h1>
-                                    <p class="text-sm font-light">Yesterday - 3hrs</p>
-                                </div>
-                            </div>
-        
-                        </div>
-            
-                        <div class="bg-Selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
-                            <div>
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
-                            </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Self-care</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">0hrs</h1>
-                                    <p class="text-sm font-light">Yesterday - 1hr</p>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="bg-Exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
-                            <div>
-                                <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
-                            </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
-                                <div class="flex items-center mx-5 justify-between">
-                                    <p class="font-bold text-sm">Exercise</p>
-                                    <img src="./images/icon-ellipsis.svg" alt="">
-                                </div>
-                
-                                <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
-                                    <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">1hr</h1>
-                                    <p class="text-sm font-light">Yesterday - 1hr</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- end of the left container div -->
 
+                <!-- start of the activity cards div -->
+
+                <!-- daily starts here -->
+
+                <div
+                role="tabpanel"
+                aria-labelledby="tab-daily"
+                id="panel-daily"
+                aria-hidden="false" class="panel"  data-timeframe="daily">
+                <div class="md:grid grid-cols-3 gap-5 text-secondary-400" >
+
+                    <div class="bg-Work-100 relative h-[130px] lg:h-[180px] lg:w-[200px] rounded-2xl  my-6 lg:my-0">
+                        <div class="">
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
+                        </div>
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Work</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">5hrs</h1>
+                                <p class="text-sm font-light">Yesterday - 7hrs</p>
+                            </div>
+                        </div>
                     </div>
+        
+                    <div class="bg-Play-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6">
+                        <div>
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
+                        </div>
+                        
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Play</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">1hr</h1>
+                                <p class="text-sm font-light">Yesterday - 2hrs</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="bg-Study-100 relative lg:h-[180px] h-[130px] w-300px rounded-2xl  my-6 lg:my-0">
+                        <div>
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
+                        </div>
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Study</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:mt-0 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-4xl lg:my-4 font-light">0hrs</h1>
+                                <p class="text-sm font-light">Yesterday - 1hr</p>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="bg-Social-100 relative h-[130px] lg:h-[180px] lg:my-0 w-300px rounded-2xl  my-6 md:my-0">
+                        <div>
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
+                        </div>
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl hover:bg-primary-100 cursor-pointer">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Social</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-3xl lg:my-3 font-light">1hr</h1>
+                                <p class="text-sm font-light">Yesterday - 3hrs</p>
+                            </div>
+                        </div>
+    
+                    </div>
+        
+                    <div class="bg-Selfcare-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                        <div>
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
+                        </div>
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Self-care</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">0hrs</h1>
+                                <p class="text-sm font-light">Yesterday - 1hr</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="bg-Exercise-100 relative h-[130px] lg:h-[180px] w-300px rounded-2xl  my-6 md:my-0">
+                        <div>
+                            <img class="absolute right-0 w-10 mr-4" src="./images/icon-exercise.svg" alt="">
+                        </div>
+                        <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
+                            <div class="flex items-center mx-5 justify-between">
+                                <p class="font-bold text-sm">Exercise</p>
+                                <img src="./images/icon-ellipsis.svg" alt="">
+                            </div>
+            
+                            <div class="flex items-center mx-5 justify-between mt-3 lg:flex-col lg:items-start">
+                                <h1 class="text-xl lg:text-3xl lg:font-light lg:my-3">1hr</h1>
+                                <p class="text-sm font-light">Yesterday - 1hr</p>
+                            </div>
+                        </div>
+                    </div>                    
+                        
+
                 </div>
+                </div>
+              
                 <!-- daily ends here -->
 
                 <!-- weekly starts here -->
@@ -185,7 +192,7 @@
                             <div class="">
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl   hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Work</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -203,7 +210,7 @@
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
                             </div>
                             
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Play</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -220,7 +227,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Study</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -237,7 +244,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl hover:bg-primary-100 cursor-pointer" >
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Social</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -255,7 +262,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Self-care</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -302,7 +309,7 @@
                             <div class="">
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-work.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Work</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -320,7 +327,7 @@
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-play.svg" alt="">
                             </div>
                             
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Play</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -337,7 +344,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-study.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Study</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -354,7 +361,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-social.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl hover:bg-primary-100 cursor-pointer">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Social</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -372,7 +379,7 @@
                             <div>
                                 <img class="absolute right-0 w-10 mr-4" src="./images/icon-self-care.svg" alt="">
                             </div>
-                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-secondary-200">
+                            <div class="bg-secondary-200 absolute w-full bottom-0 py-5 rounded-xl cursor-pointer hover:bg-primary-100">
                                 <div class="flex items-center mx-5 justify-between">
                                     <p class="font-bold text-sm">Self-care</p>
                                     <img src="./images/icon-ellipsis.svg" alt="">
@@ -409,6 +416,6 @@
         </div>
     </section>
     <script src="./index.js"></script>
-    <!-- <script src="./tabs.js"></script> -->
+    <!-- <script src="./indexAPI.js"></script> -->
 </body>
 </html>

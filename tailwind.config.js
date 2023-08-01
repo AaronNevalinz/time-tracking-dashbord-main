@@ -34,6 +34,9 @@ module.exports = {
           300:'hsl(235, 45%, 61%)',
           400:'hsl(236, 100%, 87%)'
         }
+      },
+      fontFamily:{
+        projectFont:['Epilogue']
       }
     },
   },
