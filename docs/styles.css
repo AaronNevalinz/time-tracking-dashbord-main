@@ -587,6 +587,14 @@ video {
   margin-top: 0.75rem;
 }
 
+.mt-10{
+  margin-top: 2.5rem;
+}
+
+.inline{
+  display: inline;
+}
+
 .flex{
   display: flex;
 }
@@ -741,6 +749,22 @@ video {
   background-color: hsl(235 46% 20% / var(--tw-bg-opacity));
 }
 
+.fill-primary-100{
+  fill: hsl(246, 80%, 60%);
+}
+
+.fill-secondary-100{
+  fill: hsl(226, 43%, 10%);
+}
+
+.fill-secondary-200{
+  fill: hsl(235, 46%, 20%);
+}
+
+.fill-secondary-300{
+  fill: hsl(235, 45%, 61%);
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -758,6 +782,10 @@ video {
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .font-projectFont{
@@ -800,6 +828,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .container{
